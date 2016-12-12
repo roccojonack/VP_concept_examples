@@ -1,0 +1,29 @@
+# Enable C++ support
+language: cpp
+# Compiler selection
+compiler:
+  - gcc
+before_install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -q
+  - sudo apt-get install gcc-4.8 -y
+  - sudo apt-get install libboost-all-dev
+  - sudo apt-get install cmake
+  - sudo apt-get install doxygen
+# Build steps
+script:
+  - export WORKAREA=`pwd`
+  - export SYSTEMC_HOME=$WORKAREA/tools/systemc-2.3.1-install
+  - sudo ln -s /usr/bin/make /usr/bin/gmake
+  - wget http://www.accellera.org/images/downloads/standards/systemc/systemc-2.3.1.tgz
+  - mkdir tools
+  - cd tools
+  - tar xvzf $WORKAREA/systemc-2.3.1.tgz
+  - cd systemc-2.3.1
+  - mkdir objdir
+  - cd objdir
+  - ../configure --prefix=$WORKAREA/tools/systemc-2.3.1-install
+  - make
+  - make install
+  - cd $WORKAREA/units/transaction_models/bin
+  - ./build.bash
