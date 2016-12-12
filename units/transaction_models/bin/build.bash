@@ -6,7 +6,7 @@
 # TODO: should become a perl program and generic for any unit
 MODE=""
 # MODE="-D CMAKE_BUILD_TYPE=Debug"
-UNIT="tb_mod"
+UNIT="transaction_models"
 PWD=`pwd`
 clean=0
 
@@ -35,7 +35,7 @@ done
 shift `expr $OPTIND - 1`
 
 # compiling the library and the test VP executable
-cd ${WORKAREA}/units/${UNIT}/build
+cd ${WORKAREA}/units/${UNIT}
 if [ $clean -eq 1 ]; then
 	gmake BUILD_TYPE="$MODE" clean
 fi
