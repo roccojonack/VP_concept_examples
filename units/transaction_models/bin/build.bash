@@ -35,13 +35,14 @@ done
 shift `expr $OPTIND - 1`
 
 # compiling the library and the test VP executable
-cd ${WORKAREA}/units/${UNIT}
+cd ${WORKAREA}/units/${UNIT}/build
+cmake $MODE ../source/plain_C
 if [ $clean -eq 1 ]; then
-	gmake BUILD_TYPE="$MODE" clean
+	gmake clean
 fi
-gmake BUILD_TYPE="${MODE}" all
+gmake
 # gmake doc
-gmake eclipse
+# gmake eclipse
 
 
 
