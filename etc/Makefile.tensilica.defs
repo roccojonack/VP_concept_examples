@@ -1,0 +1,6 @@
+TARGET_OBJECTS = $(patsubst %.c,%.o,$(TARGET_SRC))
+_TARGET_OBJECTS = $(filter %.o,$(subst /, ,$(TARGET_OBJECTS)))
+FIXED_TARGET_OBJECTS = $(patsubst %.o,%.o,$(_TARGET_OBJECTS))
+BUILD ?= Debug
+XTENSA_CORE ?= D_106micro
+LSP ?= sim

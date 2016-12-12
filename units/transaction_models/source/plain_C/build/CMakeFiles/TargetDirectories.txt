@@ -1,0 +1,3 @@
+/home/demo/myGit/SystemC-Examples/units/tb_mod/source/sc/tb_reference/plain_C/build/CMakeFiles/edit_cache.dir
+/home/demo/myGit/SystemC-Examples/units/tb_mod/source/sc/tb_reference/plain_C/build/CMakeFiles/rebuild_cache.dir
+/home/demo/myGit/SystemC-Examples/units/tb_mod/source/sc/tb_reference/plain_C/build/CMakeFiles/test.dir

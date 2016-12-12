@@ -1,0 +1,66 @@
+#! /usr/intel/bin/bash -f
+#
+# test the tb_mod units;
+# build the design
+# iterating over all possibilities with testcases
+# TODO: should become a perl program and generic for any unit
+BUILD_TYPE="Linux_64"
+SWY_BUILD_TYPE="NATIVE"
+MODE="Release"
+# MODE="Debug"
+COMPILER="gcc_4.5.2"
+UNIT="tb_mod"
+PWD=`pwd`
+clean=0
+
+# Parse command line options.
+while getopts hct:d OPT; do
+    case "$OPT" in
+        h)
+            echo "usage: "
+            exit 0
+            ;;
+        c)
+            clean=1
+            echo "make a clean before building"
+            ;;
+        t)
+            test_version=$OPTARG
+            ;;
+       	d)
+            MODE="Debug"
+            ;;
+        \?)
+            # getopts issues an error message
+            echo "unknown options" >&2
+            exit 1
+            ;;
+    esac
+done
+# Remove the switches we parsed above.
+shift `expr $OPTIND - 1`
+
+# compiling the VP executable
+cd ${WORKAREA}/units/${UNIT}/source/sc/tb
+if [ $clean -eq 1 ]; then
+	gmake BUILD_TYPE=${MODE}  SWY_BUILD=${SWY_BUILD_TYPE} cleanall
+fi
+gmake BUILD_TYPE=${MODE}  SWY_BUILD=${SWY_BUILD_TYPE} -j10
+gmake doc
+# TODO build any FW collateral (emuCPU)
+cd ${WORKAREA}/units/${UNIT}/bin
+if [ ! -d "logs" ]; then
+	echo "generating directory logs"
+	mkdir logs
+else
+	echo "directory logs already exits"
+fi
+# generateTaskList.csh -t 1 -r 0 -p | sed -e 's/\t/ /g' | sed -e 's/  */ /g' >! task_list.txt
+# generateTaskList.csh -t 1 -r 1 -p | sed -e 's/\t/ /g' | sed -e 's/  */ /g' >! task_list_memory.txt
+# generateTaskList.csh -t 1 -r 2 -p | sed -e 's/\t/ /g' | sed -e 's/  */ /g' >! task_list_profile.txt
+# generateTaskList.csh -t 1 -r 3 -p | sed -e 's/\t/ /g' | sed -e 's/  */ /g' >! task_list_hierachy.txt
+# generateTaskList.csh -t 2 -p | sed -e 's/\t/ /g' | sed -e 's/  */ /g' >> task_list.txt
+# generateTaskList.csh -t 3 -p | sed -e 's/\t/ /g' | sed -e 's/  */ /g' >> task_list.txt
+
+
+

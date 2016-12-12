@@ -1,0 +1,26 @@
+using home grown quantum
+quantum, transactions, runtime, workload(MTrans/sec), hostname 
+1,      480000000, 93,  5.16, musxoile11
+10,     480000000, 22, 21.82, musxoile11
+100,    480000000, 14, 34.28, musxoile11
+1000,   480000000, 13, 36.92, musxoile11
+100000, 480000000, 13, 36.92, musxoile11
+
+using standard quantum
+1, 480000000, 120.72, , musxoile11
+100000, 480000000, 32.76, , musxoile11
+
+using standard quantum, but without .need_sync() function
+1, 480000000, 108.95, , musxoile11
+10, 480000000, 24.47, , musxoile11
+100, 480000000, 14.52, , musxoile11
+1000, 480000000, 13.68, , musxoile11
+100000, 480000000, 13.55, , musxoile11
+
+using standard quantum, but without .need_sync() function and optimized
+1, 480000000, 68.93, , musxoile11
+10, 480000000, 10.02, , musxoile11
+100, 480000000, 4.36, , musxoile11
+1000, 18*50000000, 7.6, , musxoile11
+100000, 18*50000000, 7.41, , musxoile11
+

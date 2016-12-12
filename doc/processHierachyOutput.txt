@@ -1,0 +1,20 @@
+It can be very useful to get an overview over which are the hierarchical elements in a 
+given simulation. It is pretty easy to have the SystemC kernel to write out the hierarchy
+and the elements in a SystemC simulation. But the port connections can be tricky to obtain.
+I annotated the binding code to write out for this simulation the port bindings. The
+connection of the annotated code and the SystemC output can be used to create several 
+output formats. In order to get the relavent information from the simulation add the option
+--scan. The output of the simulation <foo> can then be fed into the script:
+
+createSystemCModule.pl -Input <foo>
+
+There are different output formats available:
+
+-outputType DOT (default)
+-outputType TB
+-outputType WRAPPER
+
+The dot output can be further processed into an image or into SVG for visualization by 
+webbrowser:
+
+/nfs/imu/proj/dbb/vpmuc/twg/nodm/rjonack/tools/graphviz/bin/dot -Tsvg input.dot > output.html

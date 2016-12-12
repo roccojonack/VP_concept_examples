@@ -1,0 +1,4 @@
+include $(WORKAREA)/etc/Makefile.tensilica.defs
+include $(WORKAREA)/etc/Makefile.tensilica.RF2016.4
+include $(WORKAREA)/etc/Makefile.tensilica.targets
+

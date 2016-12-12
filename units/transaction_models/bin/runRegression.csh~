@@ -1,0 +1,22 @@
+#! /usr/bin/csh -f
+
+# main entry point for automated test runs on this module
+# build the excutable
+# enter all tests that should be run automatically in
+# evaluate all results
+
+setenv SYSTEMC_PLATFORM Linux_64/gcc_4.5.2
+setenv PATH ${PATH}:/usr/intel/bin
+
+./run_build.csh >& run_build.log
+$WORKAREA/bin/run_test.pl -f task_list.txt -n 20
+# TODO: not a very clever way to way for all results to come in
+sleep 1000
+./evaluate_build.pl > evaluate_build.csv
+$WORKAREA/bin/csv_html.pl < evaluate_build.csv > evaluate_build.html
+cd logs
+../evaluate_result.pl > run.log.csv
+../summary_results.pl -f run.log.csv > run.sum.log
+cd ../..
+$WORKAREA/bin/analyze_code.pl
+$WORKAREA/bin/csv_html.pl < statistics.txt > statistics.html

@@ -1,0 +1,9 @@
+constructing init
+constructing memory
+starting run for 1000 M transfers
+finished run for 1000 M transfers 1000000000
+got the following payload [1000000000 3 -794930279]
+10.058u 0.000s 0:10.06 99.9%    0+0k 0+0io 0pf+0w
+
+-> 100MTrans/sec
+

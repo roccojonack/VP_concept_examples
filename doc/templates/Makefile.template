@@ -1,0 +1,20 @@
+#                                                              -*- Makefile -*-
+# Simics module makefile
+#
+
+MODULE_CLASSES = [% NAME %] [% NAME %]_awareness
+
+MODULE_LDFLAGS += [% LINK_FLAGS %]
+
+MODULE_CFLAGS = [% COMP_FLAGS %]
+
+PYTHON_FILES = module_load.py
+
+SRC_FILES = init.cc 
+
+# Simics compilation options
+SIMICS_API := 4.8
+THREAD_SAFE = yes
+SYSTEMC = yes
+
+include $(MODULE_MAKEFILE)

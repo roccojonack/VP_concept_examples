@@ -1,0 +1,9 @@
+general open topics for this unit:
+
+- implement a verification based on a scoreboard that contains a initiator side memory and a target side memory and compars the 2 at some points in time
+- implement a build with versioning
+- imporve the hierarchy reporting to use a json format and work on further interaction based on this format
+- add all attributes to registeration
+- bring AMBA based models into its own unit
+- add light weight registers
+- check if crave can be used for randomization

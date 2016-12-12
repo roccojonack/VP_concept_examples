@@ -1,0 +1,18 @@
+#include <simics/systemc/sc_factory.h>
+#include "[% WRAPPER_NAME %].h"
+
+#define CLASS_NAME "[% NAME %]"
+#define CLASS_DESC "Test Device for Simics SystemC factory"
+#define CLASS_DOC  "The <class>" CLASS_NAME "</class>" \
+    " runs a pure SystemC device in Simics."
+
+simics::systemc::RegisterModel model(CLASS_NAME, CLASS_DESC, CLASS_DOC,
+                                     setup_simulation, teardown_simulation);
+
+// Additional test devices below to test various setup/teardown features.
+// Code above this point serves as an example
+
+// Return sc_module* instead of void*
+simics::systemc::RegisterModel model_1("sc_module_factory", CLASS_DESC,
+                                       "Test alternative types",
+                                       setup_top_level, teardown_top_level);

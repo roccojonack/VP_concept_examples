@@ -1,0 +1,13 @@
+target: always bin/$(XTENSA_CORE)/$(BUILD)/$(LSP)/$(BIN_OUT)
+
+always:
+	-mkdir -p bin/$(XTENSA_CORE)/$(BUILD)/$(LSP)
+
+bin/$(XTENSA_CORE)/$(BUILD)/$(LSP)/$(BIN_OUT): $(TARGET_OBJECTS)
+	$(TARGET_CXX) $(TARGET_CFLAGS) --xtensa-params="" --xtensa-core="$(XTENSA_CORE)" -mlongcalls -mlsp=$(LSP) $(TARGET_LIBS) $(FIXED_TARGET_OBJECTS) -o "$@"
+
+%.o: %.c
+	$(TARGET_CXX) $(TARGET_CFLAGS) -c -o $(lastword $(subst /, ,$@)) $<
+
+clean:
+	-rm *.o $(FIXED_TARGET_OBJECTS)

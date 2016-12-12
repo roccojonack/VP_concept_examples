@@ -1,0 +1,38 @@
+# - Find libraries and headers from another unit
+
+SET(UNIT tb_mod)
+message(STATUS "Searching for header and libraries for unit ${UNIT}")
+
+# The HINTS option should only be used for values computed from the system.
+SET(_UNIT_HINTS
+  $ENV{WORKAREA}/units/${UNIT}/install/include/beh
+  $ENV{WORKAREA}/units/${UNIT}/install/lib
+  )
+# Hard-coded guesses should still go in PATHS. This ensures that the user
+# environment can always override hard guesses.
+SET(_UNIT_PATHS
+  )
+
+set(UNIT_FOUND TRUE)
+
+# message(STATUS "XTENSA version = ${XTENSA_VERSION}")
+
+FIND_PATH(UNIT_INCLUDE_DIRS
+  NAMES ${UNIT}_init_options.h
+  HINTS ${_UNIT_HINTS}
+  PATHS ${_UNIT_PATHS}
+)
+
+find_library(UNIT_LIBRARIES
+  NAMES ${UNIT}
+  HINTS ${_UNIT_HINTS}
+  PATHS ${_UNIT_PATHS}
+)
+FIND_PATH(UNIT_LIBRARY_DIRS
+  NAMES lib${UNIT}.a
+  HINTS ${_UNIT_HINTS}
+  PATHS ${_UNIT_PATHS}
+)
+message(STATUS "UNIT library = ${UNIT_LIBRARIES}")
+message(STATUS "UNIT include = ${UNIT_INCLUDE_DIRS}")
+
