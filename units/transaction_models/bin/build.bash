@@ -1,11 +1,9 @@
 #! /bin/bash -f
-#
-# test the tb_mod units;
-# build the design
-# iterating over all possibilities with testcases
+
+# test the  units in transaction_models;
+# build the different testcases
 # TODO: should become a perl program and generic for any unit
 MODE=""
-# MODE="-D CMAKE_BUILD_TYPE=Debug"
 UNIT="transaction_models"
 PWD=`pwd`
 clean=0
@@ -35,14 +33,20 @@ done
 shift `expr $OPTIND - 1`
 
 # compiling the library and the test VP executable
-cd ${WORKAREA}/units/${UNIT}/build
-cmake $MODE ../source/plain_C
-if [ $clean -eq 1 ]; then
-	gmake clean
-fi
-gmake
-# gmake doc
-# gmake eclipse
+for test in plain_C SystemC_events SystemC_signal SystemC_trans; do
+    cd ${WORKAREA}/units/${UNIT}/build
+    if [ ! -d "$test" ]; then
+	mkdir $test
+    fi
+    cd $test
+    if [ $clean -eq 1 ]; then
+	\rm -rf *
+	# gmake clean
+    fi
+    cmake $MODE ${WORKAREA}/units/${UNIT}/source/$test
+    gmake
+done
+
 
 
 
