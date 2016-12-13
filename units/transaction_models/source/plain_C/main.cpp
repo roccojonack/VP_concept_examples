@@ -21,13 +21,13 @@ public:
   };
   ~memory ()
   {
-    printf( "reached the following sum %d\n", sum );
+    printf( "reached the following sum %lld\n", sum );
   };
   void set_pl(payload* pl)
   {
     sum += pl->length;
     m_memory[pl->address] = *(pl->data);
-    // printf( "got the following payload [%d %d %d]\n", pl->address, pl->length, sum );
+    // printf( "got the following payload [%d %d %lld]\n", pl->address, pl->length, sum );
   };
   unsigned long long int get_sum()
   {
@@ -80,16 +80,16 @@ int main (int argc, char *argv[])
   boost::posix_time::ptime  	sim_master_start_time, sim_master_end_time;
   sim_master_start_time = boost::posix_time::microsec_clock::universal_time();
 
-  printf ("starting run for %d M transfers\n", NumberOfTransfers);
+  printf ("starting run for %lld M transfers\n", NumberOfTransfers);
   for (unsigned long long i=0; i<NumberOfTransfers; ++i) {
     for (unsigned long long j=0; j<1000000; ++j) {
       slave->set_pl(master->get_pl());
       sum = slave->get_sum();
-      //printf ("finished run %d transfers with sum %d\n", j, sum);
+      //printf ("finished run %d transfers with sum %lld\n", j, sum);
     };
     //printf ("finished run %d M transfers\n", i);
   };
-  printf ("finished run for %d M transfers %d\n", NumberOfTransfers, sum);
+  printf ("finished run for %lld M transfers %lld\n", NumberOfTransfers, sum);
   sim_master_end_time = boost::posix_time::microsec_clock::universal_time();
   boost::posix_time::time_duration master_elapsed_time = sim_master_end_time
     - sim_master_start_time;
