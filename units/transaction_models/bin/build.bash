@@ -32,6 +32,11 @@ done
 # Remove the switches we parsed above.
 shift `expr $OPTIND - 1`
 
+cd ${WORKAREA}/units/${UNIT}
+if [ ! -d "build" ]; then
+    mkdir build
+fi
+
 # compiling the library and the test VP executable
 for test in plain_C SystemC_events SystemC_signal SystemC_trans; do
     cd ${WORKAREA}/units/${UNIT}/build
