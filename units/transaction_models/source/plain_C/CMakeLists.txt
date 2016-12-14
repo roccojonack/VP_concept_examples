@@ -7,3 +7,7 @@ set(USE_BOOST yes)
 project(plain_C)
 
 include (${CMAKE_SOURCE_DIR}/../CMakeLists.txt)
+ 
+enable_testing()
+add_test( test1 ${EXEC_NAME} )
+add_test( test2 ${EXEC_NAME} 500 )

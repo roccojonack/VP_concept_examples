@@ -7,3 +7,6 @@ set(USE_BOOST yes)
 project ( SystemC_events )
 
 include (${CMAKE_SOURCE_DIR}/../CMakeLists.txt)
+
+enable_testing()
+add_test( test1 ${EXEC_NAME} )

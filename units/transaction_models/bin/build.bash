@@ -50,6 +50,7 @@ for test in plain_C SystemC_events SystemC_signal SystemC_trans; do
     fi
     cmake $MODE ${WORKAREA}/units/${UNIT}/source/$test
     gmake
+    gmake test
 done
 
 
