@@ -1,9 +1,9 @@
 #
 cmake_minimum_required (VERSION 2.8.11)
-project (testbench_tcp4tlm2)
+project (testbench_http_server)
 set(CMAKE_CXX_COMPILER g++)
-set(UNIT_DIR tcp4tlm2)
-set(EXEC_NAME testbench_tcp4tlm2)
+set(UNIT_DIR connection_models)
+set(EXEC_NAME testbench_http_server)
 
 FILE(GLOB MyCSources *.cpp)
 add_executable (${EXEC_NAME} ${MyCSources})
@@ -14,4 +14,4 @@ find_package( Boost REQUIRED COMPONENTS iostreams program_options serialization 
 INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
 
 target_link_libraries( ${EXEC_NAME} ${Boost_LIBRARIES} )
-# target_compile_options    ( ${EXEC_NAME} PUBLIC -std=-fpermissive )
+
