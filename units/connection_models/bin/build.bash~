@@ -42,7 +42,7 @@ if [ ! -d "build" ]; then
 fi
 
 # compiling the different elements in the unit and execute tests
-for test in ${ELEMENTS}; do
+for test in ${ELEMETNS}; do
     cd ${WORKAREA}/units/${UNIT}/build
     if [ ! -d "$test" ]; then
 	mkdir $test

@@ -27,3 +27,5 @@ script:
   - make install
   - cd $WORKAREA/units/transaction_models/bin
   - ./build.bash
+  - cd $WORKAREA/units/connection_models/bin
+  - ./build.bash

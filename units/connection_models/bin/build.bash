@@ -4,8 +4,8 @@
 # build the different testcases
 # TODO: should become a perl program and generic for any unit
 MODE="-D CMAKE_BUILD_TYPE=Release"
-UNIT="transaction_models"
-ELEMENTS="plain_C SystemC_events SystemC_signal SystemC_trans"
+UNIT="connection_models"
+ELEMENTS="boost_asio_usage boost_http_client simple_socket"
 PWD=`pwd`
 clean=0
 
@@ -54,7 +54,7 @@ for test in ${ELEMENTS}; do
     fi
     cmake $MODE ${WORKAREA}/units/${UNIT}/source/$test
     gmake
-    gmake test
+    # gmake test
 done
 
 
