@@ -14,5 +14,5 @@ find_package( Boost REQUIRED COMPONENTS iostreams program_options serialization 
 
 INCLUDE_DIRECTORIES   ( ${CMAKE_SOURCE_DIR}     ) 
 INCLUDE_DIRECTORIES   ( ${Boost_INCLUDE_DIRS}   ) 
-target_compile_options      ( test_server PUBLIC -fpermissive )
-target_compile_options      ( test_main   PUBLIC -fpermissive )
+set (CMAKE_CXX_FLAGS "-std=c++0x -fpermissive ${CMAKE_CXX_FLAGS}")
+

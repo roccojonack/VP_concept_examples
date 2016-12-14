@@ -1,5 +1,5 @@
 #
-cmake_minimum_required (VERSION 2.8.11)
+cmake_minimum_required (VERSION 2.6)
 project (testbench_http_server)
 set(CMAKE_CXX_COMPILER g++)
 set(UNIT_DIR connection_models)

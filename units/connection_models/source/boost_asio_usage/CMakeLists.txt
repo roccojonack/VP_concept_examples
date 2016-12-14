@@ -14,6 +14,5 @@ INCLUDE_DIRECTORIES   ( ${CMAKE_SOURCE_DIR}     )
 INCLUDE_DIRECTORIES   ( ${Boost_INCLUDE_DIRS}   ) 
 target_link_libraries ( test_server ${Boost_LIBRARIES}   )
 target_link_libraries ( test_client ${Boost_LIBRARIES}   )
-target_compile_options( test_server PUBLIC -std=c++11 -fpermissive)
-target_compile_options( test_client PUBLIC -std=c++11 -fpermissive)
+set (CMAKE_CXX_FLAGS "-std=c++0x -fpermissive ${CMAKE_CXX_FLAGS}")
 
