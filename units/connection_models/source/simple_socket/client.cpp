@@ -23,10 +23,16 @@ int main(int argc, char *argv[])
     int sockfd, portno, n;
     int i;
     int NumberOfTransfers;
+    bool printing = true;
     struct sockaddr_in serv_addr;
     struct hostent *server;
-    char buffer[256];
+    unsigned int MessageLength = 256;
+    char returnBuffer[MessageLength];
+    char buffer[MessageLength];
     const char msg[] = "Hello Rocco!";
+    bzero(returnBuffer,MessageLength);
+    bzero(buffer,MessageLength);
+    memcpy(buffer,msg,MessageLength);
 
     if (argc < 4) {
       fprintf(stderr,"usage %s hostname port transfers\n", argv[0]);
@@ -37,13 +43,15 @@ int main(int argc, char *argv[])
     if (argc < 3) portno = 8888;
     else  portno = atoi(argv[2]);
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd < 0) 
-        error("ERROR opening socket");
+    if (sockfd < 0) {
+        printf("ERROR opening socket\n");
+	exit (1);
+    };
     if (argc < 2) server = gethostbyname("localhost");
     else server = gethostbyname(argv[1]);
     if (server == NULL) {
-        fprintf(stderr,"ERROR, no such host\n");
-        exit(0);
+        printf("ERROR, no such host\n");
+        exit(1);
     }
     bzero((char *) &serv_addr, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
@@ -51,20 +59,20 @@ int main(int argc, char *argv[])
          (char *)&serv_addr.sin_addr.s_addr,
          server->h_length);
     serv_addr.sin_port = htons(portno);
-    if (connect(sockfd,(struct sockaddr *)&serv_addr,sizeof(serv_addr)) < 0) 
-        error("ERROR connecting");
-    printf("message to send : %s", msg);
-    bzero(buffer,256);
-    memcpy(buffer,msg,255);
+    if (connect(sockfd,(struct sockaddr *)&serv_addr,sizeof(serv_addr)) < 0) {
+        printf("ERROR connecting\n");
+	exit (1);
+    };
+    
+    printf("message to send : %s\n", msg);
     for (i=0; i<NumberOfTransfers/2; ++i) {
       n = write(sockfd,buffer,strlen(buffer));
       if (n < 0) 
-	error("ERROR writing to socket");
-      bzero(buffer,256);
-      n = read(sockfd,buffer,255);
+	printf("ERROR writing to socket");
+      n = read(sockfd,returnBuffer,(MessageLength-1));
       if (n < 0) 
-	error("ERROR reading from socket");
-      //printf("got response as %s\n",buffer);
-     };
+	printf("ERROR reading from socket");
+      if (printing) printf("got response as %s\n",returnBuffer);
+    };
     return 0;
 };
