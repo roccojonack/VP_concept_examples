@@ -1,0 +1,27 @@
+before_script:
+  - add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - apt-get update -q
+  - apt-get install gcc-4.8 -y
+  - apt-get install libboost-all-dev
+  - apt-get install cmake
+  - apt-get install doxygen
+
+building:
+  script:
+    - export WORKAREA=`pwd`
+    - export SYSTEMC_HOME=$WORKAREA/tools/systemc-2.3.1-install
+    - sudo ln -s /usr/bin/make /usr/bin/gmake
+    - wget http://www.accellera.org/images/downloads/standards/systemc/systemc-2.3.1.tgz
+    - mkdir tools
+    - cd tools
+    - tar xvzf $WORKAREA/systemc-2.3.1.tgz
+    - cd systemc-2.3.1
+    - mkdir objdir
+    - cd objdir
+    - ../configure --prefix=$WORKAREA/tools/systemc-2.3.1-install
+    - make
+    - make install
+    - cd $WORKAREA/units/transaction_models/bin
+    - ./build.bash
+    - cd $WORKAREA/units/connection_models/bin
+    - ./build.bash
