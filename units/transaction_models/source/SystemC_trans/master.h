@@ -4,7 +4,7 @@
 #include <tlm.h>
 #include "tlm_utils/simple_initiator_socket.h"
 #include "tlm_utils/tlm_quantumkeeper.h"
-#define HAS_SCV
+//#define HAS_SCV
 #ifdef HAS_SCV
 #include <scv.h>
 #include "tlm_gp_data_ext.h"

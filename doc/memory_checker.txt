@@ -1,3 +1,0 @@
-Using valgrind provides feedback about memory usage
-
-/nfs/imu/proj/dbb/vpmuc/third_party/tools/valgrind/bin/valgrind --leak-check=full <foo>
