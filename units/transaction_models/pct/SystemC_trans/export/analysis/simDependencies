@@ -1,0 +1,25 @@
+[2018-04-10 01:24:52]/lib64/ld-linux-x86-64.so.2
+[2018-04-10 01:24:51]/lib64/libc.so.6
+[2018-04-10 01:24:52]/lib64/libdl.so.2
+[2018-04-10 01:24:51]/lib64/libm.so.6
+[2018-04-10 01:24:51]/lib64/libnss_files.so.2
+[2018-04-10 01:24:52]/lib64/libpthread.so.0
+[2018-04-10 01:24:51]/lib64/librt.so.1
+[2018-11-29 10:59:10]/workarea/GitRepo/VP_concept_examples/units/transaction_models/pct/SystemC_trans/export/Debug/sim
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libSnpsVP.so
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libSnpsVPExt.so
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libdwarf.so
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libelf.so.0
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libomniDynamic4.so.1
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libomniORB4.so.1
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libomnithread.so.3
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libtbb.so.2
+[2018-09-07 12:42:13]/workarea3/synopsys/N-2017.12-1/SLS/linux/common/libso-gcc-5.2.0-64/libtbbmalloc.so.2
+[2018-09-07 12:42:04]/workarea3/synopsys/N-2017.12-1/SLS/linux/gnu/gcc-5.2.0-64/lib64/libgcc_s.so.1
+[2018-09-07 12:42:04]/workarea3/synopsys/N-2017.12-1/SLS/linux/gnu/gcc-5.2.0-64/lib64/libstdc++.so.6
+[2018-11-29 10:59:15]SystemHierarchy.xml
+[filter_tool_generated,.*artifact.*,.*snps_stub.*,.*InnoRuntime.*]__filter
+[0]__num_IPTs
+[19]__num_objects_added
+[1]__num_objects_removed
+[1]__num_register_entries

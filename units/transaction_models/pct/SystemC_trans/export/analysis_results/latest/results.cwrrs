@@ -1,0 +1,5 @@
+# Items are separated by comma; One line for each data item.
+#<monitor name>,<monitor type>,<object name>,<visible>,<data item name>,<data item kind>,<resource>,<resource ID),<viewer>,<viewer args>,<signature>
+pipelined_stream_transactor,,pipelined_stream,true,,sc_stream,scadb.cwrdb,pipelined_stream,Waveform,,e5faf6e4ccf2fdf2ffeae0fae0d3a7bda3090771bee65b2419be8117fa3aa06ec6867c8f69
+pipelined_stream_transactor/read,,pipelined_stream,true,read,sc_generator,scadb.cwrdb,pipelined_stream\read,Waveform,,e5faf6e4ccf2fdf2ffeae0fae0d3a7bda33b90a53f1837d3f63eb902f19cb4b9330fc98405
+pipelined_stream_transactor/read_0,,pipelined_stream,true,read,sc_generator,scadb.cwrdb,pipelined_stream\read,Waveform,,e5faf6e4ccf2fdf2ffeae0fae0d3a7bda3290b8fc26a1ca383ef64ee159b847c9fd482c501

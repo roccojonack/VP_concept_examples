@@ -11,7 +11,7 @@ INCLUDE_DIRECTORIES   ( ${CMAKE_SOURCE_DIR}       )
 if (USE_SYSTEMC STREQUAL yes)
    FIND_PACKAGE(SystemC)
    INCLUDE_DIRECTORIES   ( ${SystemC_INCLUDE_DIRS}   ) 
-   target_link_libraries( ${EXEC_NAME} ${SystemC_LIBRARIES})
+   target_link_libraries( ${EXEC_NAME}  /workarea/tools/systemc-2.3.1-install/lib-linux64/libscv.a ${SystemC_LIBRARIES} )
 endif()
 
 if (USE_BOOST STREQUAL yes)

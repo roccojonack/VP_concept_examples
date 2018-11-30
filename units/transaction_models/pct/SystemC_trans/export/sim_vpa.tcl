@@ -1,0 +1,1 @@
+vpa::start_simulation Debug/sim {/workarea/GitRepo/VP_concept_examples/units/transaction_models/pct/SystemC_trans/export} {--cwr_wait --cwr_properties_xml Properties.xml} 120

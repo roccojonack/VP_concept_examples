@@ -6,17 +6,23 @@
 
  *****************************************************************************/
 #include <systemc.h>
+#include <scv.h>
 #include "top.h"
 //#include "boost/date_time/posix_time/posix_time.hpp"
 
 int sc_main (int, char *[])
 {
- // boost::posix_time::ptime  	sim_start_time, sim_end_time;
+  scv_startup();
+
+  scv_tr_text_init();
+  scv_tr_db db("my_db.txlog");
+  scv_tr_db::set_default_db(&db); 
+  // boost::posix_time::ptime  	sim_start_time, sim_end_time;
   top top1("top1");
   cout << "starting simulation\n";
   //sim_start_time = boost::posix_time::microsec_clock::universal_time();
-  for (int i=0; i<10; ++i) {
-    sc_start(0.1, SC_SEC);
+  for (int i=0; i<1; ++i) {
+    sc_start(0.00001, SC_SEC);
     cout << "simulation reached timing point " << sc_time_stamp() << endl;
   };
   //sim_end_time = boost::posix_time::microsec_clock::universal_time();

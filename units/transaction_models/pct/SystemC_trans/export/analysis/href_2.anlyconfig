@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.synopsys.vp.base:NodeInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.synopsys.vp.base="com.synopsys.vp.base.anlycfg" name="HARDWARE" kind="MODULE">
+<children href="./href_3.anlyconfig#/" name="i_master" kind="MODULE"/>
+<children href="./href_5.anlyconfig#/" name="i_slave" kind="MODULE"/>
+<configInfo kind="MiscTrace" factoryName="FastTrack Info" category="FastTrack Logging"  configurable="true"/>
+<configInfo kind="MiscTrace" factoryName="FastTrack Warnings" category="FastTrack Logging"  configurable="true"/>
+<configInfo kind="MiscTrace" factoryName="FastTrack Errors" category="FastTrack Logging"  configurable="true"/>
+<configInfo kind="MiscTrace" factoryName="FastTrack Model Internal" category="FastTrack Logging"  configurable="true"/>
+<configInfo kind="BusAnalysis" factoryName="BusDebug" category="Bus Analysis"/>
+<configInfo kind="BusAnalysis" factoryName="BusAnalysis" category="Bus Analysis"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="Process Trace" category="General"/>
+<configSummary kind="MiscTrace" factoryName="Functional Coverage Port Monitor" category="General"/>
+<configSummary kind="MiscTrace" factoryName="TLM Port Trace" category="General"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="Transaction Field Statistics" category="General"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="Transaction Contention Statistics" category="General"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="Transaction Count" category="General"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="Transaction Latency Statistics" category="General"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="FastTrack Info" category="FastTrack Logging"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="FastTrack Warnings" category="FastTrack Logging"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="FastTrack Errors" category="FastTrack Logging"  configurable="true"/>
+<configSummary kind="MiscTrace" factoryName="FastTrack Model Internal" category="FastTrack Logging"  configurable="true"/>
+<configSummary kind="BusAnalysis" factoryName="BusDebug" category="Bus Analysis"/>
+<configSummary kind="BusAnalysis" factoryName="BusAnalysis" category="Bus Analysis"  configurable="true"/>
+</com.synopsys.vp.base:NodeInfo>

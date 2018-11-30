@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Monitors>
+  <Monitor>
+    <MonitorName>TLM Port Trace</MonitorName>
+    <MonitorDescription></MonitorDescription>
+    <MonitorKind>TLM Port Trace</MonitorKind>
+    <DesignObjName>HARDWARE.i_master.simple_initiator_socket_0</DesignObjName>
+    <Enabled>true</Enabled>
+  </Monitor>
+  <Monitor>
+    <MonitorName>TLM Port Trace</MonitorName>
+    <MonitorDescription></MonitorDescription>
+    <MonitorKind>TLM Port Trace</MonitorKind>
+    <DesignObjName>HARDWARE.i_slave.simple_target_socket_0</DesignObjName>
+    <Enabled>true</Enabled>
+  </Monitor>
+</Monitors>

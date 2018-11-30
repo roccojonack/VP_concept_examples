@@ -1,0 +1,12 @@
+SOURCE=HARDWARE.cpp
+COWAREHOME=/workarea3/synopsys/N-2017.12-1/SLS/linux
+PPFLAGS = -I"../../../source/SystemC_trans" -I"."
+CXXFLAGS = -fPIC
+CXX=gcc-5.2.0-64
+OPT_LEVEL= +O1
+SCSIM_OPTS=
+CXXFLAGS= $(CWR_SYSTEMC_CXXFLAGS) -g2   
+
+
+SCCFLAGS= +cache-objects +all-ifw
+

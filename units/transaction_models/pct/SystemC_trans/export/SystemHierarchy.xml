@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII" standalone="no" ?>
+<hierarch_block xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Hierarchy.xsd">
+   <name>HARDWARE</name>
+   <sys_block>
+      <name>i_master</name>
+      <type>master0</type>
+   </sys_block>
+   <sys_block>
+      <name>i_slave</name>
+      <type>slave0</type>
+   </sys_block>
+   <connections>
+      <connection>
+         <from_initiator_socket>HARDWARE.i_master.initiator_socket</from_initiator_socket>
+         <to_target_socket>HARDWARE.i_slave.target_socket</to_target_socket>
+         <from_pct_tag>initiator_socket</from_pct_tag>
+         <to_pct_tag>target_socket</to_pct_tag>
+      </connection>
+   </connections>
+   <callbacks/>
+</hierarch_block>

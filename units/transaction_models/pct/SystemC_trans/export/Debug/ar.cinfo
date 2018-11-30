@@ -1,0 +1,6 @@
+COWAREHOME=/workarea3/synopsys/N-2017.12-1/SLS/linux
+ARFLAGS = 
+CXX=gcc-5.2.0-64
+
+
+
